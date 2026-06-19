@@ -1,62 +1,54 @@
-# 🧩 ARC Prize 2024 — Human-Calibrated Problems
+# ARC Prize 2024 — Human-Calibrated Problems
 
-![Abstract Reasoning](https://img.shields.io/badge/-Abstract%20Reasoning-1a1b26?style=flat-square&logoColor=c0caf5) ![Logical AI](https://img.shields.io/badge/-Logical%20AI-1a1b26?style=flat-square&logoColor=c0caf5) ![Puzzle Solving](https://img.shields.io/badge/-Puzzle%20Solving-1a1b26?style=flat-square&logoColor=c0caf5) ![Python](https://img.shields.io/badge/-Python-1a1b26?style=flat-square&logoColor=c0caf5)
+![Domain](https://img.shields.io/badge/Domain-%60Abstract%20Reasoning%20%26%20Logical%20AI%60-blue?style=flat-square) ![Host](https://img.shields.io/badge/Host-%60ARC%20Prize%20Foundation%60-lightgrey?style=flat-square)
 
-![Banner](./banner.png)
+![Research Banner](./banner.png)
 
-> [!IMPORTANT]
-> **Host:** `ARC Prize Foundation`  
+> **Host:** [``ARC Prize Foundation``]  
 > **Platform Link:** [Kaggle Competition](https://www.kaggle.com/competitions/arc-prize-2024)  
 > **Dataset Link:** [Kaggle Dataset](https://www.kaggle.com/competitions/arc-prize-2024/data)  
-> **Domain:** `Abstract Reasoning & Logical AI`
+> **Domain:** ``Abstract Reasoning & Logical AI``
 
-## 📖 Overview
+## Overview
 
 This is my workspace for the ARC Prize 2024. The goal here was to tackle abstract reasoning puzzles that require actual logic rather than just pattern matching. It was a really fun challenge trying to solve visual grids using Python!
 
-## ⚙️ Standard Pipeline Workflow
+## Workflow Pipeline
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'background': '#0f0f12', 'primaryColor': '#1a1b26', 'edgeLabelBackground':'#11111b', 'tertiaryColor': '#1a1b26'}}}%%
 flowchart LR
-    A[Data Gathering] --> B[Preprocessing & EDA]
-    B --> C[Model Training]
-    C --> D[Inference & Submission]
-    style A fill:#1e1e24,stroke:#7aa2f7,stroke-width:2px,color:#c0caf5
-    style B fill:#1e1e24,stroke:#bb9af7,stroke-width:2px,color:#c0caf5
-    style C fill:#1e1e24,stroke:#f7768e,stroke-width:2px,color:#c0caf5
-    style D fill:#1e1e24,stroke:#9ece6a,stroke-width:2px,color:#c0caf5
+    EDA[Preprocessing & EDA]
+    Training[Model Training]
+    EDA --> Training
+    style EDA fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    style Training fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
 ```
 
-## 🗂️ Notebook Architecture & Inventory
+## Notebook Architecture
 
-### 📂 Preprocessing & EDA
-*Data cleaning, feature engineering, and exploratory data analysis.*
+### Preprocessing & EDA
 
-| Script / Notebook | Type | Versions | Average Size | Core Stack / Techniques |
-|:------------------|:-----|:---------|:-------------|:------------------------|
-| 📄 [EDA_and_Visualization](./Preprocessing%20%26%20EDA/EDA_and_Visualization.ipynb) | Single Notebook | `v1` | `238 KB` | `PyTorch` |
-| 📁 **EDA_and_Visualization_2** | Multi-Version Script | [v1](./Preprocessing%20%26%20EDA/EDA_and_Visualization_2/v1.ipynb), [v2](./Preprocessing%20%26%20EDA/EDA_and_Visualization_2/v2.ipynb) | `Avg 72 KB` | `Pandas Data Prep` |
+| Notebook / Script | Type | Versions | Average Size | Core Stack / Techniques |
+| :--- | :--- | :--- | :--- | :--- |
+| [EDA_and_Visualization](./Preprocessing%20%26%20EDA/EDA_and_Visualization.ipynb) | Single Notebook | v1 | 238 KB | PyTorch |
+| **EDA_and_Visualization_2** | Multi-Version Script | [v1](./Preprocessing%20%26%20EDA/EDA_and_Visualization_2/v1.ipynb), [v2](./Preprocessing%20%26%20EDA/EDA_and_Visualization_2/v2.ipynb) | 72 KB | Python |
 
-### 📂 Training
-*Model training and tuning scripts.*
+### Training
 
-| Script / Notebook | Type | Versions | Average Size | Core Stack / Techniques |
-|:------------------|:-----|:---------|:-------------|:------------------------|
-| 📄 [Training](./Training/Training.ipynb) | Single Notebook | `v1` | `379 KB` | `PyTorch` |
+| Notebook / Script | Type | Versions | Average Size | Core Stack / Techniques |
+| :--- | :--- | :--- | :--- | :--- |
+| [Training](./Training/Training.ipynb) | Single Notebook | v1 | 379 KB | PyTorch |
 
----
+## Navigation Guidelines
 
-## 🚀 Navigation & Usage Guidelines
-
-> [!TIP]
-> 1. **EDA & Preprocessing**: Verify data loaders, actigraphy or DICOM image transformations before model training.
-> 2. **Training & Optimization**: Check model definition parameters and training logs to reproduce network weights.
-> 3. **Inference & Post-Processing**: Run final pipelines to verify predictions and check submission formats.
-
+> **Stage Guidelines**
+>
+> 1. **EDA & Preprocessing**: Verify data loaders and inspect class distributions before model design.
+> 2. **Training & Validation**: Check training runs, loss curves, and model validation scores to evaluate performance.
+> 3. **Inference & Ensembling**: Run predictions on testing files and verify submission formatting.
 
 ---
 
-> *"We dance round in a ring and suppose, but the Secret sits in the middle and knows."*
+> "We dance round in a ring and suppose, but the Secret sits in the middle and knows."
 >
 > — **Vigneshwaran S**

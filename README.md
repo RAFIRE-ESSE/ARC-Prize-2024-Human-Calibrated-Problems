@@ -1,27 +1,46 @@
 # ARC Prize 2024 — Human-Calibrated Problems
 
-![Domain](https://img.shields.io/badge/Domain-%60Abstract%20Reasoning%20%26%20Logical%20AI%60-blue?style=flat-square) ![Host](https://img.shields.io/badge/Host-%60ARC%20Prize%20Foundation%60-lightgrey?style=flat-square)
+![Domain](https://img.shields.io/badge/Domain-Abstract%20Reasoning%20%26%20Logical%20AI-blue?style=flat-square) ![Host](https://img.shields.io/badge/Host-ARC%20Prize%20Foundation-lightgrey?style=flat-square)
 
 ![Research Banner](./banner.png)
 
-> **Host:** [``ARC Prize Foundation``]  
+> **Host:** [`ARC Prize Foundation`]  
 > **Platform Link:** [Kaggle Competition](https://www.kaggle.com/competitions/arc-prize-2024)  
 > **Dataset Link:** [Kaggle Dataset](https://www.kaggle.com/competitions/arc-prize-2024/data)  
-> **Domain:** ``Abstract Reasoning & Logical AI``
+> **Domain:** `Abstract Reasoning & Logical AI`
 
 ## Overview
 
-This is my workspace for the ARC Prize 2024. The goal here was to tackle abstract reasoning puzzles that require actual logic rather than just pattern matching. It was a really fun challenge trying to solve visual grids using Python!
+This repository contains the developmental workspace and notebooks for the **ARC Prize 2024 — Human-Calibrated Problems** project. The primary focus of this project is in the domain of **Abstract Reasoning & Logical AI** on ARC Prize Foundation. The codebase represents an iterative implementation of machine learning pipelines, structured to process datasets, train models, and validate predictions.
 
-## Workflow Pipeline
+### Project Context
+
+Getting all the task names, setting defaults and constants.
+
+### Technical Methodology & Implementation
+
+The codebase features a total of 16 cells across 4 notebook(s). The system implements several key architectural elements:
+- **Core Classes**: Custom object-oriented structures are defined to manage state and logic, including: `ARCCompressor`, `ARCGridFormatter`, `Initializer`, `LLMARCSolver`, `LLMConfig`, `Logger`.
+- **Key Algorithms & Utilities**: Procedural helpers and utilities facilitate operations, notably: `__getitem__`, `__init__`, `__iter__`, `__setitem__`, `_best_slice_point`, `_collect_problem_shapes`, `_compute_mask`, `_construct_multitensor_system`.
+- **Training & Optimization**: Includes optimization via Adam, parallel multi-processing scheduling.
+
+## System Architecture
 
 ```mermaid
 flowchart LR
-    EDA[Preprocessing & EDA]
-    Training[Model Training]
-    EDA --> Training
-    style EDA fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
-    style Training fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    Loader[ARC Grid Loader] --> Algebra[MultiTensor Algebra System]
+    Algebra --> Model[ARCCompressor VAE Model]
+    Model --> Train[Latent Optimization via Adam]
+    Train --> Post[Post-Process Boundary Masks]
+    Post --> Sub[submission.json Generator]
+    Scheduler[GPU Process Scheduler] -.-> Train
+    style Loader fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    style Algebra fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    style Model fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    style Train fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    style Post fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    style Sub fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    style Scheduler fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
 ```
 
 ## Notebook Architecture
@@ -43,9 +62,9 @@ flowchart LR
 
 > **Stage Guidelines**
 >
-> 1. **EDA & Preprocessing**: Verify data loaders and inspect class distributions before model design.
-> 2. **Training & Validation**: Check training runs, loss curves, and model validation scores to evaluate performance.
-> 3. **Inference & Ensembling**: Run predictions on testing files and verify submission formatting.
+- **EDA & Preprocessing**: Verify data loaders and inspect class distributions before model design.
+- **Training & Validation**: Check training runs, loss curves, and model validation scores to evaluate performance.
+- **Inference & Ensembling**: Run predictions on testing files and verify submission formatting.
 
 ---
 

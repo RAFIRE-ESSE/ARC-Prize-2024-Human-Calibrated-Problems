@@ -27,20 +27,20 @@ The codebase features a total of 16 cells across 4 notebook(s). The system imple
 ## System Architecture
 
 ```mermaid
-flowchart LR
+flowchart TD
     Loader[ARC Grid Loader] --> Algebra[MultiTensor Algebra System]
     Algebra --> Model[ARCCompressor VAE Model]
     Model --> Train[Latent Optimization via Adam]
+    Scheduler[GPU Process Scheduler] --> Train
     Train --> Post[Post-Process Boundary Masks]
     Post --> Sub[submission.json Generator]
-    Scheduler[GPU Process Scheduler] -.-> Train
-    style Loader fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
-    style Algebra fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
-    style Model fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
-    style Train fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
-    style Post fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
-    style Sub fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
-    style Scheduler fill:#111115,stroke:#33333b,stroke-width:1px,color:#e1e1e6
+    style Loader fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    style Algebra fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    style Model fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    style Train fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    style Post fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    style Sub fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
+    style Scheduler fill:#1f2937,stroke:#4b5563,stroke-width:1.5px,color:#f9fafb
 ```
 
 ## Notebook Architecture
